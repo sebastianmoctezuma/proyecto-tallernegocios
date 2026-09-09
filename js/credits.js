@@ -1,0 +1,114 @@
+window.KIT_CREDITS = {
+  "hero": {
+    "file": "Frankfurt Skyline 2022 bei Nacht.jpg",
+    "artist": "Jörg Braukmann",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Frankfurt_Skyline_2022_bei_Nacht.jpg"
+  },
+  "port": {
+    "file": "Hamburg Hafen Containerterminal.jpg",
+    "artist": "Raimond Spekking",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hamburg_Hafen_Containerterminal.jpg"
+  },
+  "messe": {
+    "file": "Hannover Messe 2016 (20).jpg",
+    "artist": "Bahnfrend",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hannover_Messe_2016_(20).jpg"
+  },
+  "train": {
+    "file": "Berlin Hauptbahnhof November 2013 01.jpg",
+    "artist": "Arild Vågen",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Berlin_Hauptbahnhof_November_2013_01.jpg"
+  },
+  "ice": {
+    "file": "ICE 4 Tz 9021 in Berlin Hauptbahnhof, 2024 (02).jpg",
+    "artist": "Bahnfrend",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:ICE_4_Tz_9021_in_Berlin_Hauptbahnhof,_2024_(02).jpg"
+  },
+  "reichstag": {
+    "file": "Reichstag Dome, Berlin (Ank Kumar) 01.jpg",
+    "artist": "Ank Kumar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Reichstag_Dome,_Berlin_(Ank_Kumar)_01.jpg"
+  },
+  "biergarten": {
+    "file": "Biergarten at Night 2.JPG",
+    "artist": "Martin Falbisoner",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Biergarten_at_Night_2.JPG"
+  },
+  "alps": {
+    "file": "Schloss Neuschwanstein Herbst.jpg",
+    "artist": "Otto Domes",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Schloss_Neuschwanstein_Herbst.jpg"
+  },
+  "berlin": {
+    "file": "Brandenburger Tor from Pariser Platz at night 2023-02-25 01.jpg",
+    "artist": "Leonhard Lenz",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "page": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_from_Pariser_Platz_at_night_2023-02-25_01.jpg"
+  },
+  "koeln": {
+    "file": "Hohenzollernbrücke - Kölner Dom - MusicalDome bei Nacht-2928.jpg",
+    "artist": "Raimond Spekking",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Hohenzollernbr%C3%BCcke_-_K%C3%B6lner_Dom_-_MusicalDome_bei_Nacht-2928.jpg"
+  },
+  "stuttgart": {
+    "file": "Schlossplatzspringbrunnen Schlossplatz Stuttgart 2015 01.jpg",
+    "artist": "Julian Herzog (Website)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Schlossplatzspringbrunnen_Schlossplatz_Stuttgart_2015_01.jpg"
+  },
+  "dresden": {
+    "file": "View of Dresden Altstadt from across the Elbe 2010.jpg",
+    "artist": "JopkeB",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:View_of_Dresden_Altstadt_from_across_the_Elbe_2010.jpg"
+  },
+  "muenchen": {
+    "file": "Marienplatz mit Rathaus München (Panorama) mit Frauenkirche (2019).jpg",
+    "artist": "Guido Radig",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Marienplatz_mit_Rathaus_M%C3%BCnchen_(Panorama)_mit_Frauenkirche_(2019).jpg"
+  },
+  "weihnachtsmarkt": {
+    "file": "Dresden, Striezelmarkt -- 2023 -- 9310.jpg",
+    "artist": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Dresden,_Striezelmarkt_--_2023_--_9310.jpg"
+  },
+  "puebla": {
+    "file": "Recta a Cholula.jpg",
+    "artist": "Bodofzt",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Recta_a_Cholula.jpg"
+  },
+  "factory": {
+    "file": "20161114220DR Dresden Gläserne Manufaktur.jpg",
+    "artist": "Jörg Blobelt",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:20161114220DR_Dresden_Gl%C3%A4serne_Manufaktur.jpg"
+  }
+};

@@ -2,348 +2,309 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Negociar con Alemania · Kit Digital de Negociación Internacional</title>
-  <meta name="description" content="Kit digital interactivo para prepararse a hacer negocios con Alemania: contexto internacional, cultura, riesgos culturales, recomendaciones y simulador de negociación.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Alemania · Kit Digital de Negociación Internacional</title>
+  <meta name="description" content="Kit digital interactivo para prepararse a hacer negocios con Alemania: contexto, cultura, riesgos, protocolo y un simulador de reunión.">
+  <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="is-loading">
 
-  <!-- Preloader -->
-  <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader__inner">
-      <span class="preloader__word" data-word="Willkommen">Willkommen</span>
-      <span class="preloader__word" data-word="Bienvenido">Bienvenido</span>
-      <div class="preloader__bar"><span id="preloaderBar"></span></div>
-    </div>
+  <!-- Carga -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <span class="loader__word">Alemania</span>
+    <span class="loader__line"><i id="loaderBar"></i></span>
   </div>
 
-  <!-- Cursor -->
-  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label" id="cursorLabel"></span></div>
-
-  <!-- Navegación -->
+  <!-- Navegación flotante -->
   <header class="nav" id="nav">
-    <a class="nav__brand" href="#top" aria-label="Inicio">
-      <span class="nav__flag" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="nav__title">Negociar con <strong>Alemania</strong></span>
-    </a>
-    <nav class="nav__links" aria-label="Capítulos">
-      <a href="#mundo" data-nav="mundo">Contexto</a>
-      <a href="#cultura" data-nav="cultura">Cultura</a>
-      <a href="#negocios" data-nav="negocios">Negocios</a>
-      <a href="#simulador" data-nav="simulador" class="nav__cta">Simulador</a>
-    </nav>
-    <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
-    <div class="nav__progress" aria-hidden="true"><span id="navProgress"></span></div>
+    <div class="nav__pill glass" data-glass>
+      <a class="nav__brand" href="#top">Alemania</a>
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#cifras" data-nav="cifras">Cifras</a>
+        <a href="#papel" data-nav="papel">Papel global</a>
+        <a href="#cultura" data-nav="cultura">Cultura</a>
+        <a href="#riesgos" data-nav="riesgos">Riesgos</a>
+        <a href="#protocolo" data-nav="protocolo">Protocolo</a>
+      </nav>
+      <a href="#simulador" class="nav__cta">Simulador</a>
+      <button class="nav__burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+    </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <a href="#mundo">Alemania en el mundo</a>
-    <a href="#cultura">Cultura del país</a>
-    <a href="#negocios">Cultura y negocios</a>
-    <a href="#riesgos">Riesgos culturales</a>
-    <a href="#recomendaciones">Recomendaciones</a>
+  <div class="menu glass" id="menu" aria-hidden="true">
+    <a href="#cifras">En cifras</a>
+    <a href="#comercio">Comercio</a>
+    <a href="#papel">Papel global</a>
+    <a href="#cultura">Cultura</a>
+    <a href="#alemanias">Dieciséis Alemanias</a>
+    <a href="#mapa">Test de estilo</a>
+    <a href="#riesgos">Riesgos</a>
+    <a href="#protocolo">Protocolo</a>
     <a href="#simulador">Simulador</a>
     <a href="#fuentes">Fuentes</a>
   </div>
 
-  <main id="top" class="page">
+  <main id="top">
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero">
-      <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
-      <div class="hero__ghost" aria-hidden="true"><span>Deutschland</span></div>
-
-      <div class="hero__content">
-        <p class="hero__kicker">Kit Digital de Negociación Internacional</p>
-        <h1 class="hero__title" id="heroTitle">Negociar con Alemania</h1>
-        <p class="hero__lead" id="heroLead">Todo lo que una persona necesita entender antes de sentarse frente a una contraparte alemana: la economía, la cultura y el código de conducta que abre o cierra un trato.</p>
+      <div class="hero__media" id="heroMedia">
+        <img src="assets/img/hero.jpg" alt="Skyline de Fráncfort de noche" fetchpriority="high">
+      </div>
+      <div class="hero__content" id="heroContent">
+        <p class="hero__eyebrow">Kit Digital de Negociación Internacional</p>
+        <h1 class="hero__title">Alemania.</h1>
+        <p class="hero__sub">Precisión que se negocia.</p>
         <div class="hero__actions">
-          <a href="#mundo" class="btn btn--gold" data-magnetic>Empezar el recorrido</a>
-          <a href="#simulador" class="btn btn--ghost" data-magnetic>Probar el simulador</a>
+          <a href="#cifras" class="btn btn--light">Explorar</a>
+          <a href="#simulador" class="btn btn--glass glass" data-glass>Probar el simulador</a>
         </div>
       </div>
-
-      <aside class="hero__clock" aria-label="Hora actual en Berlín">
-        <span class="hero__clock-label">Ahora en Berlín</span>
-        <span class="hero__clock-time" id="clockBerlin">--:--:--</span>
-        <span class="hero__clock-note" id="clockNote">La puntualidad empieza aquí.</span>
-      </aside>
-
-      <div class="hero__scroll" aria-hidden="true">
-        <span></span>
-        <small>Desplázate</small>
+      <div class="hero__clock glass" data-glass aria-label="Hora en Berlín">
+        <span class="hero__clock-dot"></span>
+        <span class="hero__clock-time" id="clockBerlin">--:--</span>
+        <span class="hero__clock-note" id="clockNote">Berlín</span>
       </div>
     </section>
 
-    <!-- ============ 1. CONTEXTO INTERNACIONAL ============ -->
-    <section class="chapter" id="mundo">
-      <header class="chapter__head">
-        <span class="chapter__index">Capítulo 1</span>
-        <h2 class="chapter__title split">Alemania en el mundo</h2>
-        <p class="chapter__intro">Tercera economía del planeta, tercer exportador, corazón industrial de la Unión Europea. Alemania no participa en la globalización: la diseña, la fabrica y la exporta.</p>
+    <!-- ============ CIFRAS ============ -->
+    <section class="section section--dark" id="cifras">
+      <header class="section__head">
+        <h2 class="reveal">En cifras.</h2>
+        <p class="reveal">Tercera economía y tercer exportador del mundo.</p>
       </header>
-
-      <!-- Indicadores -->
       <div class="stats" id="stats"></div>
+    </section>
 
-      <!-- Comercio -->
-      <div class="trade">
-        <div class="trade__head">
-          <h3 class="split">Con quién comercia Alemania</h3>
-          <div class="tabs" role="tablist" aria-label="Vista de comercio">
-            <button class="tab is-active" role="tab" data-chart="socios" aria-selected="true">Socios comerciales</button>
-            <button class="tab" role="tab" data-chart="exportDestinos" aria-selected="false">Destinos de exportación</button>
-            <button class="tab" role="tab" data-chart="importOrigen" aria-selected="false">Origen de importaciones</button>
-            <button class="tab" role="tab" data-chart="productos" aria-selected="false">Qué exporta</button>
+    <!-- ============ COMERCIO ============ -->
+    <section class="trade" id="comercio">
+      <div class="trade__bg" data-parallax><img src="assets/img/port.jpg" alt="Terminal de contenedores del puerto de Hamburgo"></div>
+      <div class="trade__panel glass glass--thick" data-glass>
+        <div class="trade__top">
+          <h2>Con quién comercia.</h2>
+          <div class="seg" role="tablist" aria-label="Vista">
+            <button class="seg__btn is-active" role="tab" data-chart="socios" aria-selected="true">Socios</button>
+            <button class="seg__btn" role="tab" data-chart="exportDestinos" aria-selected="false">Exporta a</button>
+            <button class="seg__btn" role="tab" data-chart="importOrigen" aria-selected="false">Importa de</button>
+            <button class="seg__btn" role="tab" data-chart="productos" aria-selected="false">Qué vende</button>
+            <span class="seg__thumb" id="segThumb"></span>
           </div>
         </div>
-        <div class="trade__body">
-          <div class="trade__chart"><canvas id="tradeChart" role="img" aria-label="Gráfica de comercio exterior de Alemania"></canvas></div>
-          <aside class="trade__aside">
-            <p class="trade__note" id="tradeNote"></p>
-            <p class="trade__source" id="tradeSource"></p>
-          </aside>
-        </div>
-      </div>
-
-      <!-- Marquee -->
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track" id="marqueeTrack"></div>
-      </div>
-
-      <!-- Rol en los negocios internacionales -->
-      <div class="roles">
-        <div class="roles__intro">
-          <h3 class="split">Qué papel juega en los negocios internacionales</h3>
-          <p>Seis funciones que Alemania cumple en la economía global y que explican con quién, cómo y por qué vas a negociar.</p>
-        </div>
-        <div class="roles__grid" id="rolesGrid"></div>
-      </div>
-
-      <!-- Ferias (scroll horizontal) -->
-      <div class="fairs" id="fairs">
-        <div class="fairs__pin">
-          <div class="fairs__title">
-            <h3>Donde se cierran los tratos</h3>
-            <p>Alemania alberga dos terceras partes de las ferias industriales líderes del mundo. Asistir es la forma más rápida de conocer al Mittelstand en persona.</p>
-            <span class="fairs__source">Fuente: AUMA</span>
-          </div>
-          <div class="fairs__track" id="fairsTrack"></div>
-        </div>
-      </div>
-
-      <!-- México -->
-      <div class="mexico" id="mexico">
-        <div class="mexico__flag" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div class="mexico__body">
-          <h3 class="split">México y Alemania</h3>
-          <ul id="mexicoList"></ul>
-          <p class="source" id="mexicoSource"></p>
-        </div>
+        <div class="trade__chart"><canvas id="tradeChart" role="img" aria-label="Comercio exterior de Alemania"></canvas></div>
+        <p class="trade__note" id="tradeNote"></p>
+        <p class="trade__source" id="tradeSource"></p>
       </div>
     </section>
 
-    <!-- ============ 2. CULTURA ============ -->
-    <section class="chapter chapter--paper" id="cultura">
-      <header class="chapter__head">
-        <span class="chapter__index">Capítulo 2</span>
-        <h2 class="chapter__title split">Cultura del país</h2>
-        <p class="chapter__intro">Rasgos, valores, religión, estructura social y la diversidad interna de un país que se unificó hace apenas 150 años.</p>
+    <!-- ============ PAPEL GLOBAL ============ -->
+    <section class="section section--dark" id="papel">
+      <header class="section__head">
+        <h2 class="reveal">Su papel en el mundo.</h2>
+        <p class="reveal">Alemania no participa en la globalización. La fabrica.</p>
       </header>
-
-      <!-- Manifiesto scrub -->
-      <div class="manifesto" id="manifesto">
-        <p class="manifesto__text" id="manifestoText"></p>
+      <div class="tiles" id="tiles"></div>
+      <div class="section__more">
+        <button class="btn btn--glass glass" data-glass data-sheet="roles">Más sobre su papel global</button>
       </div>
+    </section>
 
-      <!-- Valores: acordeón horizontal -->
-      <div class="values">
-        <div class="values__head">
-          <h3 class="split">Valores y normas sociales</h3>
-          <p>Ocho palabras alemanas que no se traducen del todo y explican la mayor parte del comportamiento social y empresarial. Pasa el cursor o toca cada una.</p>
+    <!-- ============ MÉXICO ============ -->
+    <section class="mexico" id="mexico">
+      <div class="mexico__bg" data-parallax><img src="assets/img/puebla.jpg" alt="Vista de Puebla, México"></div>
+      <div class="mexico__card glass glass--thick" data-glass>
+        <h2 id="mexicoTitle"></h2>
+        <p class="mexico__line" id="mexicoLine"></p>
+        <ul id="mexicoList"></ul>
+        <p class="source" id="mexicoSource"></p>
+      </div>
+    </section>
+
+    <!-- ============ CULTURA: VALORES (scrollytelling) ============ -->
+    <section class="values" id="cultura">
+      <div class="values__stage" id="valuesStage">
+        <div class="values__media" id="valuesMedia"></div>
+        <div class="values__card glass glass--thick" data-glass>
+          <p class="values__eyebrow">Cultura</p>
+          <h2 class="values__word" id="valuesWord">Ordnung</h2>
+          <p class="values__trad" id="valuesTrad">Orden</p>
+          <p class="values__line" id="valuesLine"></p>
+          <p class="values__biz" id="valuesBiz"></p>
+          <div class="values__dots" id="valuesDots"></div>
         </div>
-        <div class="accordion" id="valuesAccordion"></div>
       </div>
+      <div class="values__steps" id="valuesSteps"></div>
+    </section>
 
-      <!-- Hofstede -->
-      <div class="hofstede">
-        <div class="hofstede__chart">
-          <h3 class="split">Alemania frente al espejo</h3>
-          <p>Las seis dimensiones culturales de Hofstede. Activa o desactiva países para comparar.</p>
+    <section class="section section--dark section--tight" id="valores-extra">
+      <p class="manifesto reveal" id="manifesto"></p>
+      <div class="chips-row" id="valuesExtra"></div>
+    </section>
+
+    <!-- ============ HOFSTEDE ============ -->
+    <section class="section section--light" id="hofstede">
+      <header class="section__head">
+        <h2 class="reveal">Alemania frente al espejo.</h2>
+        <p class="reveal">Seis dimensiones culturales. Activa países para comparar.</p>
+      </header>
+      <div class="hof">
+        <div class="hof__card glass glass--light" data-glass>
           <div class="chips" id="hofChips"></div>
-          <div class="hofstede__canvas"><canvas id="hofChart" role="img" aria-label="Radar de dimensiones culturales de Hofstede"></canvas></div>
+          <div class="hof__canvas"><canvas id="hofChart" role="img" aria-label="Radar de dimensiones culturales"></canvas></div>
           <p class="source" id="hofSource"></p>
         </div>
-        <div class="hofstede__reads" id="hofReads"></div>
+        <div class="hof__reads" id="hofReads"></div>
       </div>
+      <div class="structure" id="structure"></div>
+    </section>
 
-      <!-- Religión -->
-      <div class="religion">
-        <div class="religion__chart">
-          <h3 class="split">Religión y calendario</h3>
-          <div class="religion__donut"><canvas id="relChart" role="img" aria-label="Distribución religiosa de Alemania"></canvas>
-            <div class="religion__center"><strong id="relBig">47 %</strong><span id="relSmall">sin religión</span></div>
-          </div>
-          <p class="source" id="relSource"></p>
-        </div>
-        <div class="religion__text">
-          <p id="relText"></p>
-          <h4>Festivos que detienen los negocios</h4>
-          <ul class="holidays" id="holidays"></ul>
-          <h4>Tradiciones con impacto empresarial</h4>
-          <div class="traditions" id="traditions"></div>
-        </div>
-      </div>
-
-      <!-- Estructura social -->
-      <div class="structure">
-        <div class="structure__head">
-          <h3 class="split">Estructura social</h3>
-          <p>Roles, jerarquías, autoridad y la relación entre el individuo y el grupo.</p>
-        </div>
-        <div class="structure__grid" id="structureGrid"></div>
-      </div>
-
-      <!-- Länder -->
-      <div class="laender">
-        <div class="laender__head">
-          <h3 class="split">Dieciséis Alemanias</h3>
-          <p>Cada estado federado tiene su carácter, su industria y su calendario. Filtra por región y toca cada uno.</p>
-          <div class="chips chips--filter" id="laenderFilter">
-            <button class="chip is-active" data-region="todos">Todos</button>
-            <button class="chip" data-region="norte">Norte</button>
-            <button class="chip" data-region="oeste">Oeste</button>
-            <button class="chip" data-region="sur">Sur</button>
-            <button class="chip" data-region="este">Este</button>
-          </div>
+    <!-- ============ DIECISÉIS ALEMANIAS ============ -->
+    <section class="laender" id="alemanias">
+      <div class="laender__bg" data-parallax><img src="assets/img/alps.jpg" alt="Castillo de Neuschwanstein en otoño"></div>
+      <div class="laender__content">
+        <header class="section__head">
+          <h2 class="reveal">Dieciséis Alemanias.</h2>
+          <p class="reveal">Cada estado tiene su carácter, su industria y su calendario.</p>
+        </header>
+        <div class="chips chips--center" id="laenderFilter">
+          <button class="chip glass is-active" data-glass data-region="todos">Todos</button>
+          <button class="chip glass" data-glass data-region="norte">Norte</button>
+          <button class="chip glass" data-glass data-region="oeste">Oeste</button>
+          <button class="chip glass" data-glass data-region="sur">Sur</button>
+          <button class="chip glass" data-glass data-region="este">Este</button>
         </div>
         <div class="laender__grid" id="laenderGrid"></div>
-        <div class="diversity" id="diversity"></div>
+        <div class="laender__bottom">
+          <div class="rel glass glass--thick" data-glass>
+            <div class="rel__donut"><canvas id="relChart" role="img" aria-label="Religión en Alemania"></canvas>
+              <div class="rel__center"><strong id="relBig">47 %</strong><span id="relSmall">sin religión</span></div>
+            </div>
+            <div class="rel__text">
+              <h3>Religión y calendario</h3>
+              <p id="relLine"></p>
+              <button class="link" data-sheet="religion">Festivos y tradiciones</button>
+              <p class="source" id="relSource"></p>
+            </div>
+          </div>
+          <div class="diversity" id="diversity"></div>
+        </div>
       </div>
     </section>
 
-    <!-- ============ 3. CULTURA Y NEGOCIOS ============ -->
-    <section class="chapter" id="negocios">
-      <header class="chapter__head">
-        <span class="chapter__index">Capítulo 3</span>
-        <h2 class="chapter__title split">Cultura y negocios</h2>
-        <p class="chapter__intro">Cómo las diferencias culturales cambian la comunicación, la negociación, las decisiones, la autoridad y el protocolo. Y qué hacer al respecto.</p>
+    <!-- ============ TEST DE ESTILO ============ -->
+    <section class="section section--light" id="mapa">
+      <header class="section__head">
+        <h2 class="reveal">¿Qué tan alemán es tu estilo?</h2>
+        <p class="reveal">Ocho preguntas, un minuto. Compara tu forma de negociar con la alemana y la mexicana.</p>
       </header>
-
-      <!-- Mapa cultural -->
-      <div class="cmap" id="cmap">
-        <div class="cmap__head">
-          <h3 class="split">Mapa cultural: Alemania, México y tú</h3>
-          <p>Las ocho escalas de Erin Meyer. Arrastra el marcador para ubicar tu propio estilo y mide la distancia que tendrás que recorrer.</p>
-        </div>
-        <div class="cmap__legend">
-          <span><i style="background:#E3B02F"></i>Alemania</span>
-          <span><i style="background:#C8102E"></i>México</span>
-          <span><i class="cmap__you-dot"></i>Tú (arrastra)</span>
-        </div>
-        <div class="cmap__scales" id="cmapScales"></div>
-        <div class="cmap__summary" id="cmapSummary"></div>
-        <p class="source" id="cmapSource"></p>
-      </div>
+      <div class="quiz glass glass--light" data-glass id="quiz"></div>
+      <p class="source source--center" id="cmapSource"></p>
     </section>
 
-    <!-- Riesgos (capítulo oscuro, stacking) -->
+    <!-- ============ RIESGOS ============ -->
     <section class="risks" id="riesgos">
-      <header class="risks__head">
-        <span class="risks__badge">Achtung</span>
-        <h2 class="split">Diez errores que cierran puertas</h2>
-        <p>Situaciones que una persona extranjera debe evitar, por qué representan un riesgo y qué hacer en su lugar.</p>
+      <div class="risks__bg" data-parallax><img src="assets/img/berlin.jpg" alt="Puerta de Brandeburgo de noche"></div>
+      <header class="section__head section__head--light">
+        <h2 class="reveal">Diez errores que cierran puertas.</h2>
+        <p class="reveal">Desliza. Cada tarjeta explica el riesgo y qué hacer en su lugar.</p>
       </header>
-      <div class="risks__stack" id="risksStack"></div>
+      <div class="carousel" id="risksCarousel">
+        <div class="carousel__track" id="risksTrack"></div>
+      </div>
+      <div class="carousel__nav">
+        <button class="round glass" data-glass id="risksPrev" aria-label="Anterior">&#8249;</button>
+        <span class="carousel__dots" id="risksDots"></span>
+        <button class="round glass" data-glass id="risksNext" aria-label="Siguiente">&#8250;</button>
+      </div>
     </section>
 
-    <!-- Recomendaciones (checklist) -->
-    <section class="chapter chapter--paper" id="recomendaciones">
-      <header class="chapter__head">
-        <h2 class="chapter__title split">Protocolo de preparación</h2>
-        <p class="chapter__intro">Recomendaciones prácticas por fase. Marca cada punto; tu progreso se guarda en este dispositivo.</p>
-        <div class="progress" aria-live="polite">
-          <div class="progress__bar"><span id="checkBar"></span></div>
-          <span class="progress__label" id="checkLabel">0 de 0 completados</span>
-          <button class="progress__reset" id="checkReset">Reiniciar</button>
+    <!-- ============ PROTOCOLO ============ -->
+    <section class="section section--light" id="protocolo">
+      <header class="section__head">
+        <h2 class="reveal">Protocolo.</h2>
+        <p class="reveal">Cinco fases. Marca cada punto; tu progreso se guarda aquí.</p>
+        <div class="ring-wrap reveal">
+          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+            <circle cx="60" cy="60" r="52" class="ring__bg"></circle>
+            <circle cx="60" cy="60" r="52" class="ring__fg" id="ringFg"></circle>
+          </svg>
+          <div class="ring__label"><strong id="checkPct">0 %</strong><span id="checkLabel">0 de 0</span></div>
+          <button class="link" id="checkReset">Reiniciar</button>
         </div>
       </header>
       <div class="phases" id="phases"></div>
     </section>
 
-    <!-- Simulador -->
+    <!-- ============ SIMULADOR ============ -->
     <section class="sim" id="simulador">
-      <div class="sim__frame">
-        <div class="sim__screen" id="simScreen">
-          <div class="sim__start" id="simStart">
-            <span class="sim__tag">Simulador de reunión</span>
-            <h2 class="split">Maschinenbau Hartmann GmbH</h2>
-            <p id="simIntro"></p>
-            <button class="btn btn--gold" id="simBegin" data-magnetic>Comenzar la reunión</button>
-          </div>
-        </div>
-        <aside class="sim__side">
-          <div class="sim__meter">
-            <span class="sim__meter-label">Preparación</span>
-            <div class="sim__meter-bar"><span id="simMeter"></span></div>
-            <span class="sim__meter-value"><b id="simScore">0</b> / <span id="simMax">60</span></span>
-          </div>
-          <ol class="sim__steps" id="simSteps"></ol>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Glosario -->
-    <section class="chapter" id="glosario">
-      <header class="chapter__head chapter__head--tight">
-        <h2 class="chapter__title split">Palabras que abren puertas</h2>
-        <p class="chapter__intro">Doce expresiones que escucharás en cualquier oficina alemana.</p>
+      <div class="sim__bg"><img src="assets/img/stuttgart.jpg" alt="Schlossplatz de Stuttgart"></div>
+      <header class="section__head section__head--light">
+        <h2 class="reveal">Simulador de reunión.</h2>
+        <p class="reveal">Una hora en Stuttgart con Maschinenbau Hartmann GmbH. Cada decisión mueve la confianza de tres personas.</p>
       </header>
-      <div class="glossary" id="glossary"></div>
-    </section>
-
-    <!-- CTA final -->
-    <section class="final">
-      <h2 class="final__title" id="finalTitle">Viel Erfolg.</h2>
-      <p>Prepárate a fondo, llega a tiempo, di la verdad y cumple lo prometido. Lo demás es negociable.</p>
-      <div class="final__actions">
-        <a href="#simulador" class="btn btn--gold" data-magnetic>Repetir el simulador</a>
-        <a href="#recomendaciones" class="btn btn--ghost btn--ghost-dark" data-magnetic>Ver el protocolo</a>
+      <div class="device glass glass--thick" data-glass>
+        <div class="device__bar">
+          <div class="people" id="simPeople"></div>
+          <div class="device__score"><span id="simScore">0</span><small>/ <span id="simMax">60</span></small></div>
+        </div>
+        <div class="device__chat" id="simChat" aria-live="polite"></div>
+        <div class="device__controls" id="simControls"></div>
       </div>
     </section>
 
-    <!-- Fuentes -->
-    <section class="sources" id="fuentes">
-      <h2>Fuentes consultadas</h2>
-      <ol id="sourcesList"></ol>
+    <!-- ============ FINAL ============ -->
+    <section class="final" id="final">
+      <div class="final__bg" data-parallax><img src="assets/img/koeln.jpg" alt="Catedral de Colonia y puente Hohenzollern de noche"></div>
+      <h2 class="final__title" id="finalTitle">Viel Erfolg.</h2>
+      <p>Prepárate a fondo. Llega a tiempo. Di la verdad. Cumple lo prometido.</p>
+      <div class="hero__actions">
+        <a href="#simulador" class="btn btn--light">Repetir el simulador</a>
+        <a href="#protocolo" class="btn btn--glass glass" data-glass>Ver el protocolo</a>
+      </div>
+    </section>
+
+    <!-- ============ GLOSARIO + FUENTES ============ -->
+    <section class="section section--dark section--tight" id="fuentes">
+      <div class="glossary" id="glossary"></div>
+      <details class="disclosure">
+        <summary>Fuentes consultadas</summary>
+        <ol id="sourcesList"></ol>
+      </details>
+      <details class="disclosure">
+        <summary>Créditos de las fotografías</summary>
+        <ol id="creditsList"></ol>
+      </details>
     </section>
 
     <footer class="footer">
-      <div>
-        <strong>Kit Digital de Negociación Internacional · Alemania</strong>
-        <span>Proyecto integrador · Negocios Internacionales · Etapa 1</span>
-      </div>
-      <div class="footer__right">
-        <span>Elaborado con HTML, CSS, JavaScript, GSAP, Lenis y Chart.js</span>
-        <a href="#top">Volver arriba</a>
-      </div>
+      <span>Kit Digital de Negociación Internacional · Alemania · Proyecto integrador</span>
+      <span>HTML · CSS · JavaScript · GSAP · Chart.js</span>
     </footer>
   </main>
+
+  <!-- Hoja modal (liquid glass) -->
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet__scrim" id="sheetScrim"></div>
+    <div class="sheet__card glass glass--thick" data-glass role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet__handle"></div>
+      <button class="sheet__close round glass" data-glass id="sheetClose" aria-label="Cerrar">&times;</button>
+      <h3 id="sheetTitle"></h3>
+      <div class="sheet__body" id="sheetBody"></div>
+    </div>
+  </div>
 
   <!-- Librerías -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollToPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 
   <!-- Aplicación -->
   <script src="js/data.js"></script>
+  <script src="js/credits.js"></script>
   <script src="js/charts.js"></script>
   <script src="js/culturemap.js"></script>
   <script src="js/simulator.js"></script>
