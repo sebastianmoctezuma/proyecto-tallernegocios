@@ -68,6 +68,169 @@ window.KIT = {
     fuente: 'Secretaría de Economía, CAMEXA, Comisión Europea'
   },
 
+  /* ---------- 4. Sistema político, económico y legal (Etapa 2) ---------- */
+
+  sistema: [
+    {
+      id: 'politico', num: '4.1', titulo: 'Sistema político',
+      resumen: 'República federal parlamentaria. Estable, predecible y lenta: todo se decide por coalición.',
+      datos: [
+        { k: 'Forma de gobierno', v: 'República federal parlamentaria (Ley Fundamental de 1949)' },
+        { k: 'Jefe de gobierno', v: 'Canciller Friedrich Merz (CDU), desde mayo de 2025' },
+        { k: 'Coalición', v: 'CDU/CSU + SPD' },
+        { k: 'Parlamento', v: 'Bundestag (630 escaños) y Bundesrat (los 16 Länder)' }
+      ],
+      estabilidad: 82,
+      estabilidadNota: 'Estabilidad política alta',
+      impacto: 'Las reglas no cambian de un día para otro, pero cada reforma pasa por la coalición, el Bundesrat y, a veces, el Tribunal Constitucional. Para hacer negocios: seguridad jurídica a cambio de paciencia.',
+      detalle: [
+        { t: 'Estructura', d: 'El presidente federal (Frank-Walter Steinmeier) tiene un papel protocolario. El poder ejecutivo lo ejerce el canciller, elegido por el Bundestag. Los 16 Länder tienen gobierno, parlamento y competencias propias en educación, policía y administración.' },
+        { t: 'Frenos y contrapesos', d: 'El "voto de censura constructivo" impide derribar a un canciller sin elegir otro al mismo tiempo. El Tribunal Constitucional Federal (Karlsruhe) puede anular leyes, como hizo con el presupuesto de 2023.' },
+        { t: 'Momento actual', d: 'La coalición de Olaf Scholz se rompió en noviembre de 2024 y hubo elecciones anticipadas en febrero de 2025. AfD quedó como segunda fuerza, pero los partidos tradicionales mantienen la mayoría. En 2025 se flexibilizó el freno de deuda para financiar defensa y un fondo de 500 mil millones de euros para infraestructura.' },
+        { t: 'Impacto en los negocios', d: 'Riesgo político bajo y contratos que se respetan. Los cambios regulatorios se anuncian con tiempo, lo que permite planear inversiones a diez años. La contraparte: permisos y reformas avanzan despacio.' }
+      ],
+      fuente: 'Bundestag; Bundesregierung; Banco Mundial, Worldwide Governance Indicators'
+    },
+    {
+      id: 'economico', num: '4.2', titulo: 'Sistema económico y teorías del comercio',
+      resumen: 'Economía social de mercado: libre competencia con fuerte red social y sindicatos que deciden junto a la empresa.',
+      datos: [
+        { k: 'Modelo', v: 'Soziale Marktwirtschaft (economía social de mercado)' },
+        { k: 'Moneda', v: 'Euro; política monetaria del BCE (Fráncfort)' },
+        { k: 'Rasgo único', v: 'Mitbestimmung: trabajadores en el consejo de supervisión' },
+        { k: 'Base industrial', v: 'Cerca del 26 % del PIB, muy por encima del promedio UE' }
+      ],
+      teorias: [
+        { nombre: 'Ventaja comparativa', autor: 'Ricardo', texto: 'Alemania se especializa donde es relativamente más productiva: bienes de capital, autos y química. Importa energía, materias primas y electrónica de consumo.' },
+        { nombre: 'Heckscher-Ohlin', autor: 'Dotación de factores', texto: 'Abunda en capital y mano de obra calificada, escasea en energía y recursos. Exporta bienes intensivos en tecnología e importa lo que su suelo no da.' },
+        { nombre: 'Nueva teoría del comercio', autor: 'Krugman', texto: 'Comercio intraindustrial: vende autos a Francia y le compra autos. Las economías de escala y la diferenciación de marca explican ese intercambio.' },
+        { nombre: 'Diamante de Porter', autor: 'Ventaja competitiva', texto: 'Formación dual de técnicos, clientes industriales exigentes, clústeres (Stuttgart, Ruhr, Silicon Saxony) y rivalidad entre miles de Mittelstand.' },
+        { nombre: 'Neomercantilismo', autor: 'La crítica', texto: 'El superávit comercial persistente le vale críticas de la UE, EE. UU. y el FMI: Alemania ahorra y exporta más de lo que consume e invierte.' }
+      ],
+      competitividad: 'Su competitividad no viene del precio sino de la calidad, la ingeniería y la confianza: vende lo que otros usan para producir.',
+      fuente: 'BMWE; Destatis; FMI, Article IV 2025'
+    },
+    {
+      id: 'legal', num: '4.3', titulo: 'Sistema legal y marco normativo',
+      resumen: 'Derecho civil codificado, como México. Todo está escrito y casi todo está regulado.',
+      datos: [
+        { k: 'Tradición', v: 'Derecho civil romano-germánico, codificado' },
+        { k: 'Códigos clave', v: 'BGB (civil), HGB (comercio), GmbHG y AktG (sociedades)' },
+        { k: 'Jerarquía', v: 'El derecho de la UE prevalece sobre la ley nacional' },
+        { k: 'Tribunales', v: 'Especializados: laborales, fiscales, administrativos' }
+      ],
+      leyes: [
+        { nombre: 'Constituir una empresa', texto: 'GmbH con capital mínimo de 25,000 €. Escritura ante notario e inscripción en el Handelsregister.', tag: 'Sociedades' },
+        { nombre: 'Control de inversión extranjera', texto: 'Inversionistas de fuera de la UE que compren 10 %, 20 % o 25 % de una empresa en sectores sensibles necesitan revisión del Ministerio de Economía (AWG / AWV).', tag: 'Inversión' },
+        { nombre: 'Protección laboral', texto: 'Despedir requiere causa justificada en empresas de más de 10 empleados. El Betriebsrat (comité de empresa) opina en contrataciones y horarios.', tag: 'Laboral' },
+        { nombre: 'Salario mínimo', texto: '13.90 € por hora en 2026 y 14.60 € en 2027.', tag: 'Laboral' },
+        { nombre: 'Cadena de suministro', texto: 'La LkSG obliga a las grandes empresas a revisar derechos humanos y medio ambiente en sus proveedores. Un proveedor mexicano debe esperar auditorías y cláusulas de cumplimiento.', tag: 'Proveedores' },
+        { nombre: 'Protección de datos', texto: 'El RGPD (DSGVO) es estricto. Compartir datos de clientes o empleados exige base legal y contratos específicos.', tag: 'Datos' },
+        { nombre: 'Impuestos', texto: 'Carga corporativa cercana al 30 %. En 2025 se aprobó bajar el impuesto de sociedades del 15 % al 10 % de forma gradual entre 2028 y 2032.', tag: 'Fiscal' },
+        { nombre: 'Tratados con México', texto: 'Convenio para evitar la doble tributación, acuerdo de protección de inversiones (APPRI) y Acuerdo Global UE–México.', tag: 'México' }
+      ],
+      fuente: 'GTAI, "Doing Business in Germany"; Bundesministerium der Justiz; Mindestlohnkommission 2025'
+    }
+  ],
+
+  /* ---------- 5. Entorno de negocios e inversión (Etapa 2) ---------- */
+
+  comercioIED: {
+    cifras: [
+      { valor: '1.56', unidad: 'billones €', etiqueta: 'Exportaciones 2024' },
+      { valor: '1.32', unidad: 'billones €', etiqueta: 'Importaciones 2024' },
+      { valor: '#3', unidad: 'en Europa', etiqueta: 'Destino de proyectos de IED' }
+    ],
+    exporta: ['Vehículos y autopartes', 'Maquinaria', 'Químicos', 'Farmacéuticos', 'Equipo eléctrico', 'Óptica y médicos'],
+    importa: ['Electrónica y computadoras', 'Energía: gas y petróleo', 'Vehículos y autopartes', 'Químicos', 'Maquinaria', 'Metales'],
+    atractivo: [
+      { titulo: 'Puerta a 450 millones', texto: 'Producir en Alemania da acceso sin aranceles a todo el mercado único europeo.' },
+      { titulo: 'Seguridad jurídica', texto: 'Contratos que se cumplen, tribunales confiables y propiedad intelectual protegida.' },
+      { titulo: 'Talento técnico', texto: 'Formación dual y universidades técnicas que producen ingenieros y técnicos de alto nivel.' },
+      { titulo: 'Infraestructura y clústeres', texto: 'Puertos, autopistas y redes de proveedores especializados en cada región.' },
+      { titulo: 'Incentivos', texto: 'Apoyos federales y regionales vía GTAI y KfW, sobre todo para semiconductores, energía limpia y el este del país.' }
+    ],
+    lectura: 'Atrae inversión por calidad y estabilidad, no por costos bajos. Grandes proyectos recientes: Tesla en Brandeburgo y ESMC (TSMC) en Dresde.',
+    fuente: 'Destatis 2024; EY European Attractiveness Survey 2025; GTAI'
+  },
+
+  retos: {
+    tipos: [
+      { id: 'economicos', nombre: 'Económicos', items: [
+        { t: 'Economía estancada', d: 'Dos años de contracción (2023 y 2024) y crecimiento mínimo en 2025.' },
+        { t: 'Energía cara', d: 'Tras perder el gas ruso, la electricidad industrial cuesta más que en EE. UU. o Asia.' },
+        { t: 'Costos laborales altos', d: 'Salarios, cargas sociales y jornadas cortas encarecen operar.' },
+        { t: 'Aranceles de EE. UU.', d: 'Golpean a la industria automotriz, principal cliente de muchos proveedores mexicanos.' }
+      ] },
+      { id: 'legales', nombre: 'Legales', items: [
+        { t: 'Regulación densa', d: 'Normas DIN, marcado CE, RGPD y LkSG: el cumplimiento es requisito, no ventaja.' },
+        { t: 'Protección laboral', d: 'Despedir o reestructurar es lento; el Betriebsrat debe ser consultado.' },
+        { t: 'Contratos exhaustivos', d: 'Penalizaciones, garantías y responsabilidad por producto detalladas al máximo.' }
+      ] },
+      { id: 'burocraticos', nombre: 'Burocráticos', items: [
+        { t: 'Digitalización lenta', d: 'Trámites en papel, correo postal y hasta fax en algunas oficinas públicas.' },
+        { t: 'Permisos tardados', d: 'Licencias de construcción y ambientales pueden tomar meses o años.' },
+        { t: 'Notarios y traducciones', d: 'Muchos documentos exigen notario alemán y traducción jurada.' },
+        { t: 'Visas', d: 'La Blue Card UE facilita contratar extranjeros, pero el trámite consular demora.' }
+      ] },
+      { id: 'logisticos', nombre: 'Logísticos', items: [
+        { t: 'Distancia y aduana', d: 'Del puerto de Veracruz a Hamburgo, 3 a 4 semanas por mar más trámite aduanero UE.' },
+        { t: 'Infraestructura envejecida', d: 'Puentes y vías férreas que requieren renovación; la Deutsche Bahn arrastra retrasos.' },
+        { t: 'Falta de personal', d: 'Escasez de técnicos y conductores (Fachkräftemangel) en logística e industria.' },
+        { t: 'Calendario', d: 'Domingos y festivos regionales detienen operación; agosto y diciembre frenan decisiones.' }
+      ] }
+    ],
+    fuente: 'GTAI; DIHK, encuesta empresarial 2025; Destatis; Deutsche Bahn, informe 2024'
+  },
+
+  /* ---------- 6. Perfil y habilidades del negociador (Etapa 2) ---------- */
+
+  empresario: {
+    linea: 'Ingeniero antes que vendedor. Piensa en la próxima generación, no en el próximo trimestre.',
+    rasgos: [
+      { titulo: 'Técnico', texto: 'Muchos directivos son ingenieros o doctores. Preguntarán por especificaciones antes que por precio.' },
+      { titulo: 'Largo plazo', texto: 'En el Mittelstand la empresa es patrimonio familiar. Busca proveedores para diez años, no para un pedido.' },
+      { titulo: 'Prudente', texto: 'Evita el riesgo, planea con detalle y prefiere financiarse con reinversión y su banco de siempre.' },
+      { titulo: 'Directo y formal', texto: 'Dice lo que piensa, separa lo personal de lo profesional y respeta jerarquías y títulos.' },
+      { titulo: 'Consensual', texto: 'Consulta con su equipo y su comité de empresa. Tarda en decidir, pero no da marcha atrás.' },
+      { titulo: 'Cumplido', texto: 'Su palabra y sus plazos valen. Espera exactamente lo mismo de su contraparte.' }
+    ],
+    prioridades: [
+      { nombre: 'Calidad y fiabilidad', peso: 95 },
+      { nombre: 'Cumplir plazos', peso: 90 },
+      { nombre: 'Cumplimiento normativo', peso: 85 },
+      { nombre: 'Relación a largo plazo', peso: 75 },
+      { nombre: 'Sostenibilidad', peso: 70 },
+      { nombre: 'Precio', peso: 60 }
+    ],
+    prioridadesNota: 'Peso relativo estimado a partir de las fuentes; el precio importa, pero rara vez decide solo.',
+    fuente: 'IfM Bonn; Hofstede Insights; GTAI; Erin Meyer'
+  },
+
+  habilidades: {
+    grupos: [
+      { id: 'competencias', nombre: 'Competencias', items: [
+        { t: 'Dominio técnico', d: 'Conoce tu producto a nivel de ingeniería: normas, tolerancias, certificaciones.' },
+        { t: 'Datos y evidencia', d: 'Cada afirmación con cifra, fuente o caso medible.' },
+        { t: 'Conocimiento normativo', d: 'DIN, CE, RGPD, LkSG e Incoterms. Saber de reglas genera confianza.' },
+        { t: 'Idioma', d: 'Inglés de negocios sólido y alemán básico para saludos y correos.' }
+      ] },
+      { id: 'actitudes', nombre: 'Actitudes', items: [
+        { t: 'Paciencia', d: 'Aceptar procesos de decisión largos sin presionar el cierre.' },
+        { t: 'Franqueza', d: 'Decir "no" o "no sé" con claridad en lugar de prometer.' },
+        { t: 'Humildad ante la crítica', d: 'Tomar las objeciones como interés, no como ataque.' },
+        { t: 'Consistencia', d: 'Mismo mensaje, mismo precio y misma persona de principio a fin.' }
+      ] },
+      { id: 'practicas', nombre: 'Habilidades prácticas', items: [
+        { t: 'Propuestas estructuradas', d: 'Contexto, método, datos y conclusión, en ese orden y por escrito.' },
+        { t: 'Escucha activa', d: 'Tomar nota de cada objeción técnica y responderla punto por punto.' },
+        { t: 'Gestión del tiempo', d: 'Puntualidad, agenda previa y seguimiento en las fechas prometidas.' },
+        { t: 'Documentar acuerdos', d: 'Enviar el Protokoll en 24 horas con responsables y fechas.' }
+      ] }
+    ],
+    fuente: 'Síntesis a partir de Erin Meyer, GTAI, CAMEXA y Hofstede Insights'
+  },
+
   /* ---------- 2. Cultura del país ---------- */
 
   manifiesto: 'El orden no es rigidez, es confianza. La puntualidad es respeto. La franqueza es honestidad. Y el descanso se defiende con la misma seriedad que un contrato.',
@@ -218,6 +381,13 @@ window.KIT = {
     { nombre: 'CAMEXA. Relaciones económicas México–Alemania.', url: 'https://mexiko.ahk.de/es/' },
     { nombre: 'Secretaría de Economía. Acuerdo Global UE–México.', url: 'https://www.gob.mx/se' },
     { nombre: 'AUMA. Ferias líderes internacionales en Alemania.', url: 'https://www.auma.de/en' },
-    { nombre: 'Simon, Hermann. Hidden Champions of the 21st Century. Springer, 2009.', url: 'https://link.springer.com/book/10.1007/978-0-387-98147-5' }
+    { nombre: 'Simon, Hermann. Hidden Champions of the 21st Century. Springer, 2009.', url: 'https://link.springer.com/book/10.1007/978-0-387-98147-5' },
+    { nombre: 'Deutscher Bundestag. Sistema político y Ley Fundamental.', url: 'https://www.bundestag.de/en' },
+    { nombre: 'Banco Mundial. Worldwide Governance Indicators.', url: 'https://www.worldbank.org/en/publication/worldwide-governance-indicators' },
+    { nombre: 'GTAI. Doing Business in Germany: formas societarias, impuestos y control de inversiones.', url: 'https://www.gtai.de/en/invest/business-location-germany' },
+    { nombre: 'Mindestlohnkommission. Decisión sobre el salario mínimo 2026-2027.', url: 'https://www.mindestlohn-kommission.de/' },
+    { nombre: 'EY. European Attractiveness Survey 2025.', url: 'https://www.ey.com/en_gl/foreign-direct-investment-surveys' },
+    { nombre: 'DIHK. Encuesta empresarial y reporte de burocracia 2025.', url: 'https://www.dihk.de/' },
+    { nombre: 'FMI. Germany: Article IV Consultation 2025.', url: 'https://www.imf.org/en/Countries/DEU' }
   ]
 };

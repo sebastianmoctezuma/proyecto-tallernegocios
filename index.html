@@ -8,7 +8,8 @@
   <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.webp" fetchpriority="high">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="is-loading">
@@ -25,8 +26,9 @@
       <a class="nav__brand" href="#top">Alemania</a>
       <nav class="nav__links" aria-label="Secciones">
         <a href="#cifras" data-nav="cifras">Cifras</a>
-        <a href="#papel" data-nav="papel">Papel global</a>
+        <a href="#sistema" data-nav="sistema">Entorno</a>
         <a href="#cultura" data-nav="cultura">Cultura</a>
+        <a href="#negociador" data-nav="negociador">Negociador</a>
         <a href="#riesgos" data-nav="riesgos">Riesgos</a>
         <a href="#protocolo" data-nav="protocolo">Protocolo</a>
       </nav>
@@ -39,9 +41,13 @@
     <a href="#cifras">En cifras</a>
     <a href="#comercio">Comercio</a>
     <a href="#papel">Papel global</a>
+    <a href="#sistema">Sistema político y legal</a>
+    <a href="#inversion">Comercio e inversión</a>
+    <a href="#retos">Retos</a>
     <a href="#cultura">Cultura</a>
     <a href="#alemanias">Dieciséis Alemanias</a>
     <a href="#mapa">Test de estilo</a>
+    <a href="#negociador">Perfil del negociador</a>
     <a href="#riesgos">Riesgos</a>
     <a href="#protocolo">Protocolo</a>
     <a href="#simulador">Simulador</a>
@@ -53,7 +59,7 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero">
       <div class="hero__media" id="heroMedia">
-        <img src="assets/img/hero.jpg" alt="Skyline de Fráncfort de noche" fetchpriority="high">
+        <img src="assets/img/hero.webp" alt="Skyline de Fráncfort de noche" fetchpriority="high" decoding="async">
       </div>
       <div class="hero__content" id="heroContent">
         <p class="hero__eyebrow">Kit Digital de Negociación Internacional</p>
@@ -82,7 +88,7 @@
 
     <!-- ============ COMERCIO ============ -->
     <section class="trade" id="comercio">
-      <div class="trade__bg" data-parallax><img src="assets/img/port.jpg" alt="Terminal de contenedores del puerto de Hamburgo"></div>
+      <div class="trade__bg" data-parallax><img src="assets/img/port.webp" alt="Terminal de contenedores del puerto de Hamburgo" loading="lazy" decoding="async"></div>
       <div class="trade__panel glass glass--thick" data-glass>
         <div class="trade__top">
           <h2>Con quién comercia.</h2>
@@ -114,12 +120,57 @@
 
     <!-- ============ MÉXICO ============ -->
     <section class="mexico" id="mexico">
-      <div class="mexico__bg" data-parallax><img src="assets/img/puebla.jpg" alt="Vista de Puebla, México"></div>
+      <div class="mexico__bg" data-parallax><img src="assets/img/puebla.webp" alt="Vista de Puebla, México" loading="lazy" decoding="async"></div>
       <div class="mexico__card glass glass--thick" data-glass>
         <h2 id="mexicoTitle"></h2>
         <p class="mexico__line" id="mexicoLine"></p>
         <ul id="mexicoList"></ul>
         <p class="source" id="mexicoSource"></p>
+      </div>
+    </section>
+
+    <!-- ============ ETAPA 2 · 4. SISTEMA POLÍTICO, ECONÓMICO Y LEGAL ============ -->
+    <section class="section section--light" id="sistema">
+      <header class="section__head">
+        <p class="eyebrow reveal">Etapa 2 · Sistema político, económico y legal</p>
+        <h2 class="reveal">Las reglas del juego.</h2>
+        <p class="reveal">Cómo se gobierna, cómo produce y qué leyes enfrenta quien llega de fuera.</p>
+      </header>
+      <div class="tabs" role="tablist" aria-label="Sistema" id="sysTabs"></div>
+      <div class="sys" id="sysPanel" role="tabpanel" aria-live="polite"></div>
+    </section>
+
+    <!-- ============ ETAPA 2 · 5.1 COMERCIO E INVERSIÓN ============ -->
+    <section class="section section--dark" id="inversion">
+      <header class="section__head">
+        <p class="eyebrow reveal">Entorno de negocios e inversión</p>
+        <h2 class="reveal">Comercio e inversión.</h2>
+        <p class="reveal">Qué entra, qué sale y por qué el capital extranjero sigue llegando.</p>
+      </header>
+      <div class="fdi">
+        <div class="fdi__figures" id="fdiFigures"></div>
+        <div class="fdi__flows">
+          <div class="flow glass" data-glass><h3><span class="flow__arrow">↗</span> Exporta</h3><ol id="fdiExport"></ol></div>
+          <div class="flow glass" data-glass><h3><span class="flow__arrow flow__arrow--in">↙</span> Importa</h3><ol id="fdiImport"></ol></div>
+        </div>
+        <h3 class="fdi__subtitle reveal">Por qué invertir aquí</h3>
+        <div class="fdi__why" id="fdiWhy"></div>
+        <p class="fdi__lectura reveal" id="fdiLectura"></p>
+        <p class="source source--center" id="fdiSource"></p>
+      </div>
+    </section>
+
+    <!-- ============ ETAPA 2 · 5.2 RETOS ============ -->
+    <section class="challenges" id="retos">
+      <div class="challenges__bg" data-parallax><img src="assets/img/dresden.webp" alt="Dresde junto al río Elba" loading="lazy" decoding="async"></div>
+      <div class="challenges__content">
+        <header class="section__head section__head--light">
+          <h2 class="reveal">Retos para hacer negocios.</h2>
+          <p class="reveal">Lo que frena a una empresa extranjera al operar en Alemania.</p>
+        </header>
+        <div class="chips chips--center" id="retosFilter"></div>
+        <div class="challenges__grid" id="retosGrid"></div>
+        <p class="source source--center" id="retosSource"></p>
       </div>
     </section>
 
@@ -163,7 +214,7 @@
 
     <!-- ============ DIECISÉIS ALEMANIAS ============ -->
     <section class="laender" id="alemanias">
-      <div class="laender__bg" data-parallax><img src="assets/img/alps.jpg" alt="Castillo de Neuschwanstein en otoño"></div>
+      <div class="laender__bg" data-parallax><img src="assets/img/alps.webp" alt="Castillo de Neuschwanstein en otoño" loading="lazy" decoding="async"></div>
       <div class="laender__content">
         <header class="section__head">
           <h2 class="reveal">Dieciséis Alemanias.</h2>
@@ -204,9 +255,46 @@
       <p class="source source--center" id="cmapSource"></p>
     </section>
 
+    <!-- ============ ETAPA 2 · 6.1 PERFIL DEL EMPRESARIO LOCAL ============ -->
+    <section class="profile" id="negociador">
+      <div class="profile__bg" data-parallax><img src="assets/img/muenchen.webp" alt="Vista de Múnich" loading="lazy" decoding="async"></div>
+      <div class="profile__content">
+        <header class="section__head section__head--light">
+          <p class="eyebrow reveal">Perfil y habilidades del negociador internacional</p>
+          <h2 class="reveal">Del otro lado de la mesa.</h2>
+          <p class="reveal" id="empLinea"></p>
+        </header>
+        <div class="profile__layout">
+          <div class="traits" id="empRasgos"></div>
+          <div class="prio glass glass--thick" data-glass>
+            <h3>Qué pesa en su decisión</h3>
+            <div class="prio__bars" id="empPrio"></div>
+            <p class="source" id="empNota"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ETAPA 2 · 6.2 HABILIDADES DEL NEGOCIADOR ============ -->
+    <section class="section section--light" id="habilidades">
+      <header class="section__head">
+        <h2 class="reveal">Lo que necesitas para ganar su confianza.</h2>
+        <p class="reveal">Marca lo que ya dominas y descubre qué te falta.</p>
+      </header>
+      <div class="skills">
+        <div class="skills__meter">
+          <strong id="skillPct">0 %</strong>
+          <span class="skills__bar"><i id="skillBar"></i></span>
+          <span id="skillMsg">Empieza a marcar.</span>
+        </div>
+        <div class="skills__groups" id="skillGroups"></div>
+        <p class="source source--center" id="skillSource"></p>
+      </div>
+    </section>
+
     <!-- ============ RIESGOS ============ -->
     <section class="risks" id="riesgos">
-      <div class="risks__bg" data-parallax><img src="assets/img/berlin.jpg" alt="Puerta de Brandeburgo de noche"></div>
+      <div class="risks__bg" data-parallax><img src="assets/img/berlin.webp" alt="Puerta de Brandeburgo de noche" loading="lazy" decoding="async"></div>
       <header class="section__head section__head--light">
         <h2 class="reveal">Diez errores que cierran puertas.</h2>
         <p class="reveal">Desliza. Cada tarjeta explica el riesgo y qué hacer en su lugar.</p>
@@ -240,7 +328,7 @@
 
     <!-- ============ SIMULADOR ============ -->
     <section class="sim" id="simulador">
-      <div class="sim__bg"><img src="assets/img/stuttgart.jpg" alt="Schlossplatz de Stuttgart"></div>
+      <div class="sim__bg"><img src="assets/img/stuttgart.webp" alt="Schlossplatz de Stuttgart" loading="lazy" decoding="async"></div>
       <header class="section__head section__head--light">
         <h2 class="reveal">Simulador de reunión.</h2>
         <p class="reveal">Una hora en Stuttgart con Maschinenbau Hartmann GmbH. Cada decisión mueve la confianza de tres personas.</p>
@@ -257,7 +345,7 @@
 
     <!-- ============ FINAL ============ -->
     <section class="final" id="final">
-      <div class="final__bg" data-parallax><img src="assets/img/koeln.jpg" alt="Catedral de Colonia y puente Hohenzollern de noche"></div>
+      <div class="final__bg" data-parallax><img src="assets/img/koeln.webp" alt="Catedral de Colonia y puente Hohenzollern de noche" loading="lazy" decoding="async"></div>
       <h2 class="final__title" id="finalTitle">Viel Erfolg.</h2>
       <p>Prepárate a fondo. Llega a tiempo. Di la verdad. Cumple lo prometido.</p>
       <div class="hero__actions">
@@ -297,17 +385,17 @@
   </div>
 
   <!-- Librerías -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 
   <!-- Aplicación -->
-  <script src="js/data.js"></script>
-  <script src="js/credits.js"></script>
-  <script src="js/charts.js"></script>
-  <script src="js/culturemap.js"></script>
-  <script src="js/simulator.js"></script>
-  <script src="js/main.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/credits.js"></script>
+  <script defer src="js/charts.js"></script>
+  <script defer src="js/culturemap.js"></script>
+  <script defer src="js/simulator.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 </html>

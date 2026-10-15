@@ -1,6 +1,6 @@
 # Alemania — Kit Digital de Negociación Internacional
 
-Sitio web interactivo (Etapa 1 del proyecto integrador) para prepararse a hacer negocios con Alemania. Estética tipo Apple: tipografía del sistema, superficies liquid glass, fotografías reales a pantalla completa, textos breves con hojas de detalle.
+Sitio web interactivo (Etapas 1 y 2 del proyecto integrador) para prepararse a hacer negocios con Alemania. Estética tipo Apple: tipografía del sistema, superficies liquid glass, fotografías reales a pantalla completa, textos breves con hojas de detalle.
 
 ## Cómo abrir
 
@@ -11,11 +11,11 @@ python3 -m http.server 8000
 # http://localhost:8000
 ```
 
-Requiere internet para fuentes y librerías (GSAP, Chart.js por CDN). Las fotografías están en `assets/img/` y funcionan sin conexión.
+Requiere internet para fuentes y librerías (GSAP, Chart.js por CDN). Las fotografías están en `assets/img/` en WebP (≈2 MB en total, carga diferida) y funcionan sin conexión.
 
 ## Estructura
 
-- `index.html` — secciones: hero, cifras, comercio, papel global, México, valores (scrollytelling), Hofstede, dieciséis Länder y religión, test de estilo, riesgos (carrusel), protocolo (checklist), simulador de reunión, cierre, glosario, fuentes y créditos.
+- `index.html` — secciones: hero, cifras, comercio, papel global, México, **Etapa 2** (4. sistema político, económico y legal; 5. comercio e inversión y retos; 6. perfil del empresario y habilidades del negociador), valores (scrollytelling), Hofstede, dieciséis Länder y religión, test de estilo, riesgos (carrusel), protocolo (checklist), simulador de reunión, cierre, glosario, fuentes y créditos.
 - `css/styles.css` — tokens, liquid glass, componentes, responsive, reduced-motion y reduced-transparency.
 - `js/data.js` — contenido, cifras y fuentes.
 - `js/credits.js` — créditos de las fotografías (generado desde `assets/img/credits.json`).

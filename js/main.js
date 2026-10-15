@@ -17,7 +17,7 @@
   const $ = (s, c) => (c || document).querySelector(s);
   const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
   const fmt = (n, dec) => n.toLocaleString('es-MX', { minimumFractionDigits: dec, maximumFractionDigits: dec });
-  const IMG = (k) => `assets/img/${k}.jpg`;
+  const IMG = (k) => `assets/img/${k}.webp`;
 
   let lenis = null;
 
@@ -274,8 +274,149 @@
     });
   }
 
+  /* ---------- Etapa 2 ---------- */
+
+  function sysPanelHtml(s) {
+    const datos = `<dl class="sys__facts">${s.datos.map((d) => `<div><dt>${d.k}</dt><dd>${d.v}</dd></div>`).join('')}</dl>`;
+    let extra = '';
+    if (s.id === 'politico') {
+      extra = `
+        <div class="meter">
+          <div class="meter__head"><span>${s.estabilidadNota}</span><strong>${s.estabilidad}<small>/100</small></strong></div>
+          <span class="meter__track"><i style="--w:${s.estabilidad}%"></i></span>
+        </div>
+        <p class="sys__impact"><b>Impacto en los negocios.</b> ${s.impacto}</p>
+        <button class="link" data-sheet="politico">Estructura, contrapesos y momento actual</button>`;
+    }
+    if (s.id === 'economico') {
+      extra = `
+        <div class="theories">${s.teorias.map((t) => `<article class="theory"><span>${t.autor}</span><h4>${t.nombre}</h4><p>${t.texto}</p></article>`).join('')}</div>
+        <p class="sys__impact"><b>De dónde viene su competitividad.</b> ${s.competitividad}</p>`;
+    }
+    if (s.id === 'legal') {
+      extra = `<div class="laws">${s.leyes.map((l) => `<article class="law"><span class="law__tag">${l.tag}</span><h4>${l.nombre}</h4><p>${l.texto}</p></article>`).join('')}</div>`;
+    }
+    return `
+      <div class="sys__intro">
+        <span class="sys__num">${s.num}</span>
+        <h3>${s.titulo}</h3>
+        <p class="sys__lead">${s.resumen}</p>
+        ${datos}
+      </div>
+      <div class="sys__body">${extra}</div>
+      <p class="source sys__source">Fuente: ${s.fuente}</p>`;
+  }
+
+  function renderSistema() {
+    const tabs = $('#sysTabs');
+    const panel = $('#sysPanel');
+    const show = (i, animate) => {
+      $$('.tab', tabs).forEach((t, j) => { t.classList.toggle('is-active', j === i); t.setAttribute('aria-selected', String(j === i)); });
+      const paint = () => { panel.innerHTML = sysPanelHtml(K.sistema[i]); };
+      if (!animate || !hasGsap || REDUCED) { paint(); return; }
+      gsap.to(panel, { opacity: 0, y: 8, duration: 0.18, ease: 'power2.in', onComplete: () => {
+        paint();
+        gsap.fromTo(panel, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power3.out' });
+        if (hasST) ScrollTrigger.refresh();
+      } });
+    };
+    K.sistema.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.className = 'tab'; b.type = 'button'; b.setAttribute('role', 'tab');
+      b.innerHTML = `<span>${s.num}</span> ${s.titulo.split(' y ')[0].replace('Sistema ', '')}`;
+      b.addEventListener('click', () => show(i, true));
+      tabs.appendChild(b);
+    });
+    show(0, false);
+  }
+
+  function renderInversion() {
+    const C = K.comercioIED;
+    $('#fdiFigures').innerHTML = C.cifras.map((c) => `<div class="fig"><strong>${c.valor}</strong><span>${c.unidad}</span><small>${c.etiqueta}</small></div>`).join('');
+    $('#fdiExport').innerHTML = C.exporta.map((x) => `<li>${x}</li>`).join('');
+    $('#fdiImport').innerHTML = C.importa.map((x) => `<li>${x}</li>`).join('');
+    $('#fdiWhy').innerHTML = C.atractivo.map((a) => `<article class="why"><h4>${a.titulo}</h4><p>${a.texto}</p></article>`).join('');
+    $('#fdiLectura').textContent = C.lectura;
+    $('#fdiSource').textContent = 'Fuente: ' + C.fuente;
+  }
+
+  function renderRetos() {
+    const R = K.retos;
+    const filter = $('#retosFilter');
+    const grid = $('#retosGrid');
+    const tipos = [{ id: 'todos', nombre: 'Todos' }].concat(R.tipos);
+    tipos.forEach((t, i) => {
+      const b = document.createElement('button');
+      b.className = 'chip glass' + (i === 0 ? ' is-active' : ''); b.setAttribute('data-glass', ''); b.type = 'button';
+      b.textContent = t.nombre; b.dataset.tipo = t.id;
+      filter.appendChild(b);
+    });
+    R.tipos.forEach((t) => t.items.forEach((it) => {
+      const el = document.createElement('article');
+      el.className = 'challenge glass'; el.setAttribute('data-glass', '');
+      el.dataset.tipo = t.id;
+      el.innerHTML = `<span class="challenge__tag">${t.nombre}</span><h4>${it.t}</h4><p>${it.d}</p>`;
+      grid.appendChild(el);
+    }));
+    filter.addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip'); if (!chip) return;
+      $$('.chip', filter).forEach((c) => c.classList.toggle('is-active', c === chip));
+      const id = chip.dataset.tipo;
+      $$('.challenge', grid).forEach((c) => { c.hidden = id !== 'todos' && c.dataset.tipo !== id; });
+      if (hasGsap && !REDUCED) gsap.fromTo($$('.challenge:not([hidden])', grid), { y: 14, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.035, ease: 'power3.out', overwrite: true });
+      if (hasST) ScrollTrigger.refresh();
+    });
+    $('#retosSource').textContent = 'Fuente: ' + R.fuente;
+  }
+
+  function renderNegociador() {
+    const E = K.empresario;
+    $('#empLinea').textContent = E.linea;
+    $('#empRasgos').innerHTML = E.rasgos.map((r) => `<article class="trait glass" data-glass><h4>${r.titulo}</h4><p>${r.texto}</p></article>`).join('');
+    $('#empPrio').innerHTML = E.prioridades.map((p) => `<div class="bar"><span class="bar__name">${p.nombre}</span><span class="bar__track"><i style="--w:${p.peso}%"></i></span></div>`).join('');
+    $('#empNota').textContent = E.prioridadesNota + ' Fuente: ' + E.fuente + '.';
+  }
+
+  const SKILL_KEY = 'kit-de-skills';
+  function renderHabilidades() {
+    const H = K.habilidades;
+    let state = {};
+    try { state = JSON.parse(localStorage.getItem(SKILL_KEY) || '{}'); } catch (e) { state = {}; }
+    const root = $('#skillGroups');
+    const inputs = [];
+    H.grupos.forEach((g) => {
+      const col = document.createElement('section');
+      col.className = 'skillgroup';
+      col.innerHTML = `<h3>${g.nombre}</h3><ul></ul>`;
+      const ul = $('ul', col);
+      g.items.forEach((it, i) => {
+        const id = `s-${g.id}-${i}`;
+        const li = document.createElement('li');
+        li.innerHTML = `<label class="check"><input type="checkbox" id="${id}" ${state[id] ? 'checked' : ''}><span class="check__box"></span><span class="check__text"><b>${it.t}</b>${it.d}</span></label>`;
+        const input = $('input', li);
+        input.addEventListener('change', () => {
+          state[id] = input.checked;
+          try { localStorage.setItem(SKILL_KEY, JSON.stringify(state)); } catch (e) { /* sin almacenamiento */ }
+          update();
+        });
+        inputs.push(input);
+        ul.appendChild(li);
+      });
+      root.appendChild(col);
+    });
+    function update() {
+      const done = inputs.filter((i) => i.checked).length;
+      const pct = Math.round(done / inputs.length * 100);
+      $('#skillPct').textContent = pct + ' %';
+      $('#skillBar').style.width = pct + '%';
+      $('#skillMsg').textContent = pct === 0 ? 'Empieza a marcar.' : pct < 50 ? 'Buen inicio. Prepárate más antes de viajar.' : pct < 100 ? 'Casi listo. Refuerza lo que falta.' : 'Listo para negociar en Alemania.';
+    }
+    update();
+    $('#skillSource').textContent = 'Fuente: ' + H.fuente;
+  }
+
   function renderAll() {
-    renderStats(); renderTiles(); renderMexico(); renderValues(); renderValuesExtra(); renderHof(); renderLaender(); renderRisks(); renderProtocol(); renderGlossaryAndSources();
+    renderStats(); renderTiles(); renderMexico(); renderSistema(); renderInversion(); renderRetos(); renderValues(); renderValuesExtra(); renderHof(); renderLaender(); renderNegociador(); renderHabilidades(); renderRisks(); renderProtocol(); renderGlossaryAndSources();
   }
 
   /* =================== HOJA MODAL =================== */
@@ -330,6 +471,10 @@
       if (kind === 'roles') {
         const items = K.roles.map((r) => ({ t: r.titulo, d: r.detalle, f: r.fuente })).concat(K.rolesExtra.map((r) => ({ t: r.titulo, d: r.detalle, f: r.fuente })));
         openSheet('Su papel en los negocios internacionales', items.map((i) => `<div class="sheet__item"><h4>${i.t}</h4><p>${i.d}</p><small>Fuente: ${i.f}</small></div>`).join(''));
+      }
+      if (kind === 'politico') {
+        const P = K.sistema.find((x) => x.id === 'politico');
+        openSheet('Sistema político', P.detalle.map((i) => `<div class="sheet__item"><h4>${i.t}</h4><p>${i.d}</p></div>`).join('') + `<p class="source">Fuente: ${P.fuente}.</p>`);
       }
       if (kind === 'religion') {
         const R = K.religion;
@@ -446,7 +591,7 @@
     if (lenis) lenis.on('scroll', onScroll);
 
     if (hasST) {
-      const map = { cifras: ['#cifras', '#comercio'], papel: ['#papel', '#mexico'], cultura: ['#cultura', '#valores-extra', '#hofstede', '#alemanias', '#mapa'], riesgos: ['#riesgos'], protocolo: ['#protocolo'] };
+      const map = { cifras: ['#cifras', '#comercio', '#papel', '#mexico'], sistema: ['#sistema', '#inversion', '#retos'], cultura: ['#cultura', '#valores-extra', '#hofstede', '#alemanias', '#mapa'], negociador: ['#negociador', '#habilidades'], riesgos: ['#riesgos'], protocolo: ['#protocolo'] };
       Object.keys(map).forEach((key) => map[key].forEach((sel) => {
         const el = document.querySelector(sel); if (!el) return;
         ScrollTrigger.create({ trigger: el, start: 'top center', end: 'bottom center', onToggle: (self) => { if (self.isActive) $$('.nav__links a').forEach((a) => a.classList.toggle('is-active', a.dataset.nav === key)); } });
@@ -498,14 +643,15 @@
     $$('.reveal').forEach((el) => {
       gsap.from(el, { y: 28, opacity: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
     });
-    ['.stat', '.read', '.struct', '.land', '.div', '.phase', '.term'].forEach((sel) => {
+    ['.stat', '.read', '.struct', '.land', '.div', '.phase', '.term', '.fig', '.flow', '.why', '.challenge', '.trait', '.skillgroup'].forEach((sel) => {
       const els = $$(sel); if (!els.length) return;
       ScrollTrigger.batch(els, { start: 'top 92%', once: true, onEnter: (batch) => gsap.fromTo(batch, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, stagger: 0.06, ease: 'power3.out', overwrite: true }) });
     });
-    ['.trade__panel', '.mexico__card', '.hof__card', '.rel', '.quiz', '.device', '.manifesto'].forEach((sel) => {
+    ['.trade__panel', '.mexico__card', '.sys', '.hof__card', '.rel', '.quiz', '.prio', '.device', '.manifesto'].forEach((sel) => {
       const el = $(sel); if (!el) return;
       gsap.from(el, { y: 40, opacity: 0, scale: 0.98, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
     });
+    gsap.from('.bar__track i', { width: 0, duration: 1.2, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: '.prio', start: 'top 80%', once: true } });
     if (hasSplit) {
       const split = SplitText.create('#finalTitle', { type: 'chars,words', charsClass: 'char' });
       gsap.from(split.chars, { yPercent: 110, opacity: 0, duration: 1.1, stagger: 0.04, ease: 'power4.out', scrollTrigger: { trigger: '.final', start: 'top 65%', once: true } });
@@ -596,11 +742,11 @@
     if (!hasGsap || REDUCED) { loader.remove(); document.body.classList.remove('is-loading'); done(); return; }
     if (lenis) lenis.stop();
     gsap.timeline({ onComplete: () => { loader.remove(); document.body.classList.remove('is-loading'); if (lenis) lenis.start(); done(); } })
-      .to('.loader__word', { opacity: 1, duration: 0.6, ease: 'power2.out' }, 0)
-      .to('#loaderBar', { width: '100%', duration: 1.2, ease: 'power2.inOut' }, 0.1)
-      .to('.loader__word', { opacity: 0, y: -8, duration: 0.4, ease: 'power2.in' }, 1.2)
-      .to(loader, { opacity: 0, duration: 0.6, ease: 'power2.inOut' }, 1.35)
-      .call(introHero, null, 1.4);
+      .to('.loader__word', { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0)
+      .to('#loaderBar', { width: '100%', duration: 0.55, ease: 'power2.inOut' }, 0.05)
+      .to('.loader__word', { opacity: 0, y: -8, duration: 0.25, ease: 'power2.in' }, 0.55)
+      .to(loader, { opacity: 0, duration: 0.35, ease: 'power2.inOut' }, 0.65)
+      .call(introHero, null, 0.65);
   }
 
   function start() {
